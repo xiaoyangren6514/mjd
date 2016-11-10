@@ -17,5 +17,7 @@ return array(
     'DB_PREFIX' => 'mjd_',    // 数据库表前缀
     'DB_DEBUG' => TRUE, // 数据库调试模式 开启后可以记录SQL日志
 
+    'DEFAULT_FILTER' => 'trim,htmlspecialchars', // 参数过滤方法 用于I函数...
+
 
 );

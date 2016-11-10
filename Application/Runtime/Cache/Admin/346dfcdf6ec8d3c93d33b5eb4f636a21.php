@@ -39,16 +39,16 @@
                         <span class="notice-span" id="noticeGoodsSN">如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
                     </td>
                 </tr>-->
-               <!-- <tr>
-                    <td class="label">商品分类：</td>
-                    <td>
-                        <select name="cat_id">
-                            <option value="0">请选择...</option>
-                            <?php if(is_array($cat_list)): foreach($cat_list as $key=>$val): ?><option value="<<?php echo ($val["cat_id"]); ?>>"><<?php echo (str_repeat('&nbsp;&nbsp;',$val["lev"])); ?>><<?php echo ($val["cat_name"]); ?>></option><?php endforeach; endif; ?>
-                        </select>
-                        <span class="require-field">*</span>
-                    </td>
-                </tr>-->
+                <!-- <tr>
+                     <td class="label">商品分类：</td>
+                     <td>
+                         <select name="cat_id">
+                             <option value="0">请选择...</option>
+                             <?php if(is_array($cat_list)): foreach($cat_list as $key=>$val): ?><option value="<<?php echo ($val["cat_id"]); ?>>"><<?php echo (str_repeat('&nbsp;&nbsp;',$val["lev"])); ?>><<?php echo ($val["cat_name"]); ?>></option><?php endforeach; endif; ?>
+                         </select>
+                         <span class="require-field">*</span>
+                     </td>
+                 </tr>-->
                 <!--<tr>
                     <td class="label">商品品牌：</td>
                     <td>
@@ -78,14 +78,14 @@
                         <input type="radio" name="is_on_sale" value="否"/> 否
                     </td>
                 </tr>
-               <!-- <tr>
-                    <td class="label">加入推荐：</td>
-                    <td>
-                        <input type="checkbox" name="is_best" value="1"/> 精品
-                        <input type="checkbox" name="is_new" value="1"/> 新品
-                        <input type="checkbox" name="is_hot" value="1"/> 热销
-                    </td>
-                </tr>-->
+                <!-- <tr>
+                     <td class="label">加入推荐：</td>
+                     <td>
+                         <input type="checkbox" name="is_best" value="1"/> 精品
+                         <input type="checkbox" name="is_new" value="1"/> 新品
+                         <input type="checkbox" name="is_hot" value="1"/> 热销
+                     </td>
+                 </tr>-->
                 <!--<tr>
                     <td class="label">推荐排序：</td>
                     <td>
@@ -113,7 +113,7 @@
                 <tr>
                     <td class="label">商品简单描述：</td>
                     <td>
-                        <textarea name="goods_desc" cols="40" rows="3"></textarea>
+                        <textarea name="goods_desc" id="goods_desc"></textarea>
                     </td>
                 </tr>
             </table>
@@ -131,3 +131,17 @@
 </div>
 </body>
 </html>
+
+<link href="/Public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/Public/umeditor/third-party/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="/Public/umeditor/lang/zh-cn/zh-cn.js"></script>
+
+<script>
+    UM.getEditor('goods_desc', {
+                initialFrameWidth: "100%",
+                initialFrameHeight: 250
+            }
+    );
+</script>

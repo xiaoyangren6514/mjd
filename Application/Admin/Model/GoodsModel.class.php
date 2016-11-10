@@ -24,4 +24,22 @@ class GoodsModel extends Model
         array('shop_price', 'require', '商品描述不能为空', 1),
     );
 
+    /**
+     * 如果在模型中定义了该方法，那么在添加数据之前会先执行该方法
+     * 一般这种方法叫做钩子方法
+     * 函数内部要修改传入函数的变量值，需要使用引用传递，对象除外，对象默认就是引用传递
+     * 其它钩子方法：
+     *  _after_insert
+     *  _before_update
+     *  _after_update
+     *  _before_delete
+     *  _after_delete
+     */
+    protected function _before_insert(&$data, $options)
+    {
+        $data['addtime'] = date('Y-m-d H:i:s', time());
+        $data['goods_desc'] = removeXSS($_POST['goods_desc']);
+    }
+
+
 }
